@@ -23,7 +23,7 @@ sudo chmod +x uninstall
 
 if [ "$PREFIX" = "/data/data/com.termux/files/usr" ]; then
     INSTALL_DIR="$PREFIX/usr/share/doc/fsociety"
-    BIN_DIR="$PREFIX/bin/"
+    BIN_DIR="$PREFIX/bin"
     BASH_PATH="$PREFIX/bin/bash"
     TERMUX=true
 
