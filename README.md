@@ -1,6 +1,6 @@
 # Fsociety Hacking Tools Pack
 
-[![Python2.7](https://img.shields.io/badge/Python-2.7-green.svg?style=flat-square)](https://www.python.org/downloads/release/python-2714/) 
+[![Python2.7](https://img.shields.io/badge/Python-3.12.3-green.svg?style=flat-square)](https://www.python.org/downloads/release/python-3123/) 
 ![OS](https://img.shields.io/badge/Tested%20On-Linux%20|%20OSX%20|%20Windows%20|%20Android-yellowgreen.svg?style=flat-square) 
 ![Docker](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg?style=flat-square) 
 [![License](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](https://github.com/Manisso/fsociety/blob/master/LICENSE)
@@ -9,7 +9,11 @@ A Penetration Testing Framework, you will have every script that a hacker needs.
 
 ## Fsociety Contains All Tools Used in Mr. Robot Series
 
-[![Mr. Robot](http://nikolaskama.me/content/images/2016/07/mr-robot-1.gif)](https://wikipedia.org/wiki/Mr._Robot)
+<center>
+
+![Mr. Robot](./src/img/mr-robot-1.gif)
+
+</center>
 
 ## Menu
 
@@ -104,7 +108,7 @@ A Penetration Testing Framework, you will have every script that a hacker needs.
 ## Installation [Linux](https://wikipedia.org/wiki/Linux) [![alt tag](http://icons.iconarchive.com/icons/dakirby309/simply-styled/32/OS-Linux-icon.png)](https://fr.wikipedia.org/wiki/Linux)
 
 ```bash
-bash <(wget -qO- https://git.io/vAtmB)
+bash <(wget -qO- https://t.ly/aHqHF)
 ```
 
 ## Installation
@@ -112,7 +116,7 @@ bash <(wget -qO- https://git.io/vAtmB)
 Download [Termux](https://play.google.com/store/apps/details?id=com.termux)
 
 ```bash
-bash <(wget -qO- https://git.io/vAtmB)
+bash <(wget -qO- https://t.ly/aHqHF)
 ```
 
 Follow this video [Arif - Tech](https://www.youtube.com/watch?v=JwK5oOBjpgQ)
@@ -127,7 +131,7 @@ Use Google Cloud Console [Cloud Shell](https://console.cloud.google.com/cloudshe
 
 Or use free Ubuntu VPS [c9.io](https://c9.io/)
 
-## [Docker](https://en.wikipedia.org/wiki/Docker_(software)) Usage ![docker logo](https://png.icons8.com/color/50/000000/docker.png)
+## [Docker](https://en.wikipedia.org/wiki/Docker_(software))[![docker logo](https://icons.iconarchive.com/icons/pictogrammers/material/32/docker-icon.png)](https://en.wikipedia.org/wiki/Docker_(software)) Usage 
 
 ### Dependecies
 
@@ -169,3 +173,7 @@ docker-compose down # destroys instance
 # License
 
 [MIT Licence](https://github.com/Manisso/fsociety/blob/master/LICENSE)
+
+# Updater
+
+[Scoop](https://github.com/EmmanuelScopelliti)

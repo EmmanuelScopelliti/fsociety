@@ -27,7 +27,7 @@ if [ "$PREFIX" = "/data/data/com.termux/files/usr" ]; then
     BASH_PATH="$PREFIX/bin/bash"
     TERMUX=true
 
-    pkg install -y git python2
+    pkg install -y git python3
 elif [ "$(uname)" = "Darwin" ]; then
     INSTALL_DIR="/usr/local/fsociety"
     BIN_DIR="/usr/local/bin/"
@@ -39,7 +39,7 @@ else
     BASH_PATH="/bin/bash"
     TERMUX=false
 
-    sudo apt-get install -y git python2.7
+    sudo apt-get install -y git python3.12
 fi
 
 echo "[✔] Checking directories...";
@@ -61,18 +61,18 @@ if [ -d "$INSTALL_DIR" ]; then
     fi
 fi
 echo "[✔] Cleaning up old directories...";
-if [ -d "$ETC_DIR/Manisso" ]; then
+if [ -d "$ETC_DIR/EmmanuelScopelliti" ]; then
     echo "$DIR_FOUND_TEXT"
     if [ "$TERMUX" = true ]; then
-        rm -rf "$ETC_DIR/Manisso"
+        rm -rf "$ETC_DIR/EmmanuelScopelliti"
     else
-        sudo rm -rf "$ETC_DIR/Manisso"
+        sudo rm -rf "$ETC_DIR/EmmanuelScopelliti"
     fi
 fi
 
 echo "[✔] Installing ...";
 echo "";
-git clone --depth=1 https://github.com/Manisso/fsociety "$INSTALL_DIR";
+git clone --depth=1 https://github.com/EmmanuelScopelliti/fsociety "$INSTALL_DIR";
 echo "#!$BASH_PATH
 python $INSTALL_DIR/fsociety.py" "${1+"$@"}" > "$INSTALL_DIR/fsociety";
 chmod +x "$INSTALL_DIR/fsociety";

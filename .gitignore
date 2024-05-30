@@ -2,3 +2,5 @@ install
 logs/
 tools/
 .DS_Store
+
+.idea/
