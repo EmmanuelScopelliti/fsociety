@@ -722,7 +722,7 @@ class crips:
         self.run()
 
     def installed(self):
-        return (os.path.isdir(self.installDir) or os.path.isdir("/usr/share/doc/Crips"))
+        return os.path.isdir(self.installDir) or os.path.isdir("/usr/share/doc/Crips")
 
     def install(self):
         os.system("git clone --depth=1 %s %s" %
