@@ -218,7 +218,7 @@ class fsociety:
         self.__init__()
 
     def update(self):
-        os.system("git clone --depth=1 https://github.com/Manisso/fsociety.git")
+        os.system("git clone --depth=1 https://github.com/EmmanuelScopelliti/fsociety.git")
         os.system("cd fsociety && bash ./update.sh")
         os.system("fsociety")
 
