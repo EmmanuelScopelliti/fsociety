@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python3
 #    ______              _      _           _______
 #   |  ____|            (_)    | |         |__   __|
 #   | |__ ___  ___   ___ _  ___| |_ _   _     | | ___  __ _ _ __ ___
@@ -572,8 +572,7 @@ class wpscan:
         print("   {99}-Return to information gathering menu \n")
         response = input("wpscan ~# ")
         clearScr()
-        logPath = "../../logs/wpscan-" + \
-            strftime("%Y-%m-%d_%H:%M:%S", gmtime()) + ".txt"
+        logPath = "../../logs/wpscan-" + strftime("%Y-%m-%d_%H:%M:%S", gmtime()) + ".txt"
         wpscanOptions = "--no-banner --random-agent --url %s" % target
         try:
             if response == "1":
