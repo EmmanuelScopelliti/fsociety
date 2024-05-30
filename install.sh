@@ -30,7 +30,7 @@ if [ "$PREFIX" = "/data/data/com.termux/files/usr" ]; then
     pkg install -y git python3
 elif [ "$(uname)" = "Darwin" ]; then
     INSTALL_DIR="/usr/local/fsociety"
-    BIN_DIR="/usr/local/bin/"
+    BIN_DIR="/usr/local/bin"
     BASH_PATH="/bin/bash"
     TERMUX=false
 else
