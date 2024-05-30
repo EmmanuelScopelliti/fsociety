@@ -35,7 +35,7 @@ elif [ "$(uname)" = "Darwin" ]; then
     TERMUX=false
 else
     INSTALL_DIR="$HOME/.fsociety"
-    BIN_DIR="/usr/local/bin/"
+    BIN_DIR="/usr/local/bin"
     BASH_PATH="/bin/bash"
     TERMUX=false
 
