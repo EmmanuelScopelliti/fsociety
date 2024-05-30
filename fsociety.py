@@ -713,7 +713,7 @@ class crips:
 
     def __init(self):
         self.installDir = toolDir + "Crips"
-        self.gitRepo = "https://github.com/Manisso/Crips.git"
+        self.gitRepo = "https://github.com/EmmanuelScopelliti/Crips.git"
 
         if not self.installed():
             self.install()

@@ -127,7 +127,7 @@ Follow this video [Arif - Tech](https://www.youtube.com/watch?v=JwK5oOBjpgQ)
 
 Download Linux Bash Like [Cygwin](https://www.cygwin.com/)
 
-Download [Python](https://www.python.org/downloads/release/python-2714/)
+Download [Python](https://www.python.org/downloads/release/python-3123/)
 
 Use Google Cloud Console [Cloud Shell](https://console.cloud.google.com/cloudshell/editor?project=&pli=1&shellonly=true)
 
