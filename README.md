@@ -108,16 +108,18 @@ A Penetration Testing Framework, you will have every script that a hacker needs.
 ## Installation [Linux](https://wikipedia.org/wiki/Linux) [![alt tag](http://icons.iconarchive.com/icons/dakirby309/simply-styled/32/OS-Linux-icon.png)](https://fr.wikipedia.org/wiki/Linux)
 
 ```bash
-bash <(wget -qO- https://t.ly/aHqHF)
+bash <(wget -qO- http://gg.gg/1ayh6l)
 ```
+(using [gg.gg](https://gg.gg) since [git.io](https://git.io) has been deprecated)
 
 ## Installation
 
 Download [Termux](https://play.google.com/store/apps/details?id=com.termux)
 
 ```bash
-bash <(wget -qO- https://t.ly/aHqHF)
+bash <(wget -qO- http://gg.gg/1ayh6l)
 ```
+(using [gg.gg](https://gg.gg) since [git.io](https://git.io) has been deprecated
 
 Follow this video [Arif - Tech](https://www.youtube.com/watch?v=JwK5oOBjpgQ)
 
