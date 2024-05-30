@@ -857,10 +857,8 @@ class reaver:
         return (os.path.isdir(self.installDir))
 
     def install(self):
-        os.system("git clone --depth=1 %s %s" %
-                  (self.gitRepo, self.installDir))
-        os.system(
-            "apt-get -y install build-essential libpcap-dev sqlite3 libsqlite3-dev aircrack-ng pixiewps")
+        os.system("git clone --depth=1 %s %s" % (self.gitRepo, self.installDir))
+        os.system("apt-get -y install build-essential libpcap-dev sqlite3 libsqlite3-dev aircrack-ng pixiewps")
         os.system("cd %s/" % self.installDir)
         os.system("./configure")
         os.system("make")
