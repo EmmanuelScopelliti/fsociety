@@ -23,7 +23,7 @@ import os
 import http.client as httplib
 import subprocess
 import re
-import urllib.request as urllib2
+import urllib as urllib2
 import socket
 import urllib
 import sys
