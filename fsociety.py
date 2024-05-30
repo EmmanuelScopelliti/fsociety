@@ -35,7 +35,7 @@ import queue as Queue
 import threading
 import base64
 import time
-import configparser as ConfigParser
+import configparser
 from sys import argv
 from getpass import getpass
 from xml.dom import minidom
@@ -75,7 +75,7 @@ Config
 installDir = os.path.dirname(os.path.abspath(__file__)) + '/'
 configFile = installDir + "/fsociety.cfg"
 print(installDir)
-config = ConfigParser.RawConfigParser()
+config = configparser.ConfigParser()
 config.read(configFile)
 
 toolDir = installDir + config.get('fsociety', 'toolDir')
@@ -181,7 +181,7 @@ class fsociety:
         elif choice == "11":
             self.githubContributors()
         elif choice == "99":
-            with open(configFile, 'wb') as configfile:
+            with open(configFile, 'w') as configfile:
                 config.write(configfile)
             sys.exit()
         elif choice == "\r" or choice == "\n" or choice == "" or choice == " ":
