@@ -92,7 +92,7 @@ then
     echo "[✔] Tool installed successfully! [✔]";
     echo "";
     echo "[✔]====================================================================[✔]";
-    echo "[✔]      All is done!! You can execute tool by typing fsociety !       [✔]";
+    echo "[✔]    All is done!! You can execute tool by typing sudo fsociety !    [✔]";
     echo "[✔]====================================================================[✔]";
     echo "";
 else
